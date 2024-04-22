@@ -1,15 +1,23 @@
-
-import './App.css'
+import ProType from 'prop-types'
+import "bootstrap/dist/css/bootstrap.min.css";
+import './App.css';
 
 function App() {
   return (
     <>
       <main className="container my-5">
-        <h1>Hello world</h1>
+        <MensajeSaludo mensaje="Mi amigo" />
       </main>
-      ;
     </>
   );
 }
 
-export default App
+function MensajeSaludo(props) {
+  return <h1>Hola {props.mensaje}</h1>;
+}
+
+MensajeSaludo.propTypes= {
+  mensaje: ProType.string.isRequired
+}
+
+export default App;
